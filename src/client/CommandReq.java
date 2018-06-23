@@ -184,14 +184,33 @@ public class CommandReq {
         return false;
     }
 
-    //指定数据传输端口请求
-    public static String portReq(){
-        return "";
-    }
-
     // 修改目录信息请求
-    public static String cwdReq(){
-        return "";
+    public static boolean cwdReq(String dirName, BufferedReader reader, PrintWriter writer, JTextArea respInfo){
+        String message;
+        String[] datas;
+        try {
+            // 向FTP服务器发送显示文件目录请求
+            writer.write("cwd " + dirName + "\r\n");
+            writer.flush();
+
+            // 获取响应信息
+            message = reader.readLine();
+
+            // 显示信息
+            respInfo.append(message + "\n");
+
+            datas = message.split(" ");
+            if(datas[0].equals("250")){ // 切换成功
+                System.out.println("切换成功");
+                return true;
+            }else{  // 目录不存在，切换失败
+                System.out.println("目录不存在，切换失败");
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     // 存储文件请求
@@ -231,6 +250,35 @@ public class CommandReq {
                 System.out.println("message : " + message);
                 dataSocket.close(); // 断开数据连接
                 System.out.println("数据连接断开！");
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    // 删除指定文件
+    public static boolean deleReq(String fname, BufferedReader reader, PrintWriter writer, JTextArea respInfo){
+        String message;
+        String[] datas;
+        try {
+            // 向FTP服务器发送显示文件目录请求
+            writer.write("dele " + fname + "\r\n");
+            writer.flush();
+
+            // 接收响应信息
+            message = reader.readLine();
+            datas = message.split(" ");
+
+            // 显示信息
+            respInfo.append(message + "\n");
+
+            if(datas[0].equals("250")){
+                System.out.println("文件删除完成。");
+                return true;
+            }else{
+                System.out.println("文件删除失败！");
                 return false;
             }
         } catch (IOException e) {

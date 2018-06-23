@@ -1,6 +1,6 @@
 package server;
 
-import commands.*;
+import server.commandResp.*;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -45,11 +45,11 @@ public class FtpServer {
             case "USER": return new UserCommand();   // 用户名验证
             case "PASS": return new PassCommand();   // 密码验证
             case "LIST": return new ListCommand();    // 显示目录
-            case "PORT": return new PortCommand();   //
             case "QUIT": return new QuitCommand();   // 正常退出
             case "RETR": return new RetrCommand();   // 下载文件
-            case "CWD": return new CwdCommand();     // 修改文件目录
+            case "CWD": return new CwdCommand();     // 切换工作目录目录
             case "STOR": return new StorCommand();  // 上传文件
+            case "DELE": return new DeleCommand();  // 删除文件
             default : return null;  // 命令不存在
         }
     }
@@ -61,16 +61,18 @@ public class FtpServer {
      */
     public class ClientHandler implements Runnable {
 
-        private String nowDir = "D:\\Program Files (x86)\\java_work\\FTP_Server\\src\\rootDir";
-        private String userInfoFile = "D:\\Program Files (x86)\\java_work\\FTP_Server\\src\\rootDir\\userInfo.txt";
+        // 工作目录
+        private String nowDir = "D:\\Program Files (x86)\\java_work\\FTP_Server\\src\\server\\rootDir";
+        // 用户名及密码信息文件
+        private String userInfoFile = "D:\\Program Files (x86)\\java_work\\FTP_Server\\src\\server\\userInfo\\userInfo.txt";
         private BufferedReader reader;
         private BufferedWriter writer;
         private Socket socket;
-        private String clientName;
-        private String clientPasswd;
-        private boolean isLogin = false;
-        private String dataIP;
-        private String dataPort;
+        private String clientName;  // 用户名
+        private String clientPasswd; // 用户密码
+        private boolean isLogin = false; // 是否登录
+        private String dataIP;  // 连接IP
+        private String dataPort; // 连接端口
 
         // 构造方法
         public ClientHandler(Socket socket) throws IOException {
@@ -113,9 +115,6 @@ public class FtpServer {
             return this.userInfoFile;
         }
 
-        public void setUserInfoFile(String userInfoFile){
-            this.userInfoFile = userInfoFile;
-        }
 
         public void setNowDir(String nowDir){
             this.nowDir = nowDir;
@@ -125,21 +124,11 @@ public class FtpServer {
             return this.nowDir;
         }
 
-        public void setDataIP(String dataIP){
-            this.dataIP = dataIP;
-        }
 
         public String getDataIP(){
             return this.dataIP;
         }
 
-        public void setDataPort(String dataPort){
-            this.dataPort = dataPort;
-        }
-
-        public String getDataPort(){
-            return this.dataPort;
-        }
 
 
         // 接收客户端的命令请求

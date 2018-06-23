@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class FtpClient {
 
-    private String userDir = "D:\\Program Files (x86)\\java_work\\FTP_Server\\src\\userDir"; // 默认下载文件路径
+    private String userDir = "D:\\Program Files (x86)\\java_work\\FTP_Server\\src\\client\\clientDir"; // 默认下载文件路径
     private PrintWriter writer;   // 打印输出流
     private Socket socket;
     private BufferedReader reader;

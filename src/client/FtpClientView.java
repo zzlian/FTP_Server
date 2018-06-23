@@ -43,10 +43,11 @@ public class FtpClientView {
     private JLabel label;
     private JLabel label2;
     private JButton refresh;
-    private JButton signUp;
-    private JTextField textField1;
+    private JTextField dirName;
+    private JButton dele;
     private FtpClient client = null;
     private String selectedFile = null;
+    private String fLable;
 
     // 构造函数，添加按钮的监听事件
     public FtpClientView() {
@@ -94,6 +95,9 @@ public class FtpClientView {
                 if(selectedFile == null){
                     JOptionPane.showMessageDialog(null, "请选择要下载的文件！");
                     return;
+                }else if(fLable.equals("d")){
+                    JOptionPane.showMessageDialog(null, "不能选择文件夹，请选择合适的文件！");
+                    return;
                 }
                 // 向服务器发送下载指定文件的请求
                 boolean ok;
@@ -116,6 +120,18 @@ public class FtpClientView {
                 if(isLogin.getText().equals("未登录")){
                     JOptionPane.showMessageDialog(null, "未登录！");
                     return;
+                }
+                if(dirName.getText().equals("")){
+                    JOptionPane.showMessageDialog(null, "目录名不能为空！");
+                    return;
+                }
+                // 向服务器发送切换工作目录请求
+                boolean ok;
+                ok = CommandReq.cwdReq(dirName.getText(), client.getReader(), client.getWriter(), respInfo);
+                if(ok == true){
+                    JOptionPane.showMessageDialog(null, "成功切换到工作目录: " + dirName.getText());
+                }else{
+                    JOptionPane.showMessageDialog(null, "指定的目录不存在，切换失败！");
                 }
             }
         });
@@ -178,20 +194,6 @@ public class FtpClientView {
                 }else{  // 显示文件目录信息
                     datas = message.split("\n");
                     fileInfo.setListData(datas);
-                }
-            }
-        });
-        // 指定数据传输端口
-        port.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(isLinked.getText().equals("未连接")){
-                    JOptionPane.showMessageDialog(null, "未连接FTP服务器！");
-                    return;
-                }
-                if(isLogin.getText().equals("未登录")){
-                    JOptionPane.showMessageDialog(null, "未登录！");
-                    return;
                 }
             }
         });
@@ -273,17 +275,42 @@ public class FtpClientView {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 String message;
+                String[] datas;
                 message = fileInfo.getSelectedValue();
                 if(message != null){
-                    selectedFile = message.split("\t")[0]; // 获取被选取的文件名
+                    datas = message.split("\t"); // 获取被选取的文件名
+                    selectedFile = datas[0];    // 获取文件名
+                    fLable = datas[2];      // 获取文件类别
                 }
             }
         });
-        // 向FTP服务器注册账号
-        signUp.addActionListener(new ActionListener() {
+        // 删除指定的文件
+        dele.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if(isLinked.getText().equals("未连接")){
+                    JOptionPane.showMessageDialog(null, "未连接FTP服务器！");
+                    return;
+                }
+                if(isLogin.getText().equals("未登录")){
+                    JOptionPane.showMessageDialog(null, "未登录！");
+                    return;
+                }
+                if(selectedFile == null){
+                    JOptionPane.showMessageDialog(null, "请选择要删除的文件！");
+                    return;
+                }else if(fLable.equals("d")){
+                    JOptionPane.showMessageDialog(null, "不能选择文件夹，请选择合适的文件！");
+                    return;
+                }
+                // 向服务器发送删除指定文件的请求
+                boolean ok;
+                ok = CommandReq.deleReq(selectedFile, client.getReader(), client.getWriter(), respInfo);
+                if(ok == true){
+                    JOptionPane.showMessageDialog(null, "文件删除完成！");
+                }else{
+                    JOptionPane.showMessageDialog(null, "文件删除失败！");
+                }
             }
         });
     }

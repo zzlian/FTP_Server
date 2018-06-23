@@ -169,15 +169,6 @@
                   <text value="登录"/>
                 </properties>
               </component>
-              <component id="a76a8" class="javax.swing.JButton" binding="signUp">
-                <constraints>
-                  <grid row="2" column="14" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="20"/>
-                  <text value="注册"/>
-                </properties>
-              </component>
             </children>
           </grid>
           <grid id="5d162" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -276,7 +267,7 @@
                       </component>
                     </children>
                   </scrollpane>
-                  <component id="69c50" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                  <component id="69c50" class="javax.swing.JTextField" binding="dirName">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="-1"/>
@@ -353,15 +344,6 @@
                       <text value="更改工作目录"/>
                     </properties>
                   </component>
-                  <component id="1c19e" class="javax.swing.JButton" binding="quit">
-                    <constraints>
-                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <font size="20"/>
-                      <text value="退出登录"/>
-                    </properties>
-                  </component>
                   <component id="e79ff" class="javax.swing.JButton" binding="list">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -371,22 +353,31 @@
                       <text value="文件信息"/>
                     </properties>
                   </component>
-                  <component id="77275" class="javax.swing.JButton" binding="port">
+                  <component id="1aef3" class="javax.swing.JButton" binding="dele">
                     <constraints>
                       <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <font size="20"/>
-                      <text value="Button"/>
+                      <text value="删除文件"/>
                     </properties>
                   </component>
                   <component id="8667" class="javax.swing.JButton" binding="refresh">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font size="20"/>
+                      <text value="刷新"/>
+                    </properties>
+                  </component>
+                  <component id="1c19e" class="javax.swing.JButton" binding="quit">
                     <constraints>
                       <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <font size="20"/>
-                      <text value="刷新"/>
+                      <text value="退出登录"/>
                     </properties>
                   </component>
                 </children>

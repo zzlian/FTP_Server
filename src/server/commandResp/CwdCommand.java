@@ -12,7 +12,7 @@ import java.io.Writer;
 public class CwdCommand implements Command{
 
     public void getResult(String data, Writer writer, ClientHandler t) {
-        System.out.println("data : " + data);
+        System.out.println("data : " + data + "\n");
 
         // 待切换的目标目录
         String dir = t.getNowDir() +File.separator+data;
@@ -21,7 +21,7 @@ public class CwdCommand implements Command{
             if((file.exists())&&(file.isDirectory())) {
                 String nowDir =t.getNowDir() +File.separator+data;
                 t.setNowDir(nowDir);    // 切换工作目录
-                writer.write("250 CWD succesful\r\n");
+                writer.write("250 cwd successfully\r\n");
             } else {    // 目录不存在，切换失败
                 writer.write("550 dir does not exist\r\n");
             }

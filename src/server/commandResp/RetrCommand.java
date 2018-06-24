@@ -17,19 +17,18 @@ import java.net.Socket;
 public class RetrCommand implements Command{
 
     public void getResult(String data, Writer writer, ClientHandler t) {
-        System.out.println("filename : " + data);
+        System.out.println("filename : " + data + "\n");
 
         Socket s;
         String desDir = t.getNowDir()+File.separator+data;  // 目标文件地址
         File file = new File(desDir);
-        System.out.println(desDir);
 
         // 文件存在时，建立数据连接，进行数据传输
         if(file.exists())
         {
             try {
                 // 向客户端发出建立数据连接的指令
-                writer.write("150 open ascii mode...\r\n");
+                writer.write("150 Opening data connection for retr\r\n");
                 writer.flush();
 
                 // 建立数据连接
@@ -48,7 +47,7 @@ public class RetrCommand implements Command{
                 s.close();  // 关闭连接
 
                 // 发送数据连接结束信息
-                writer.write("220 transfer complete...\r\n");
+                writer.write("220 transfer complete\r\n");
                 writer.flush();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -56,7 +55,7 @@ public class RetrCommand implements Command{
         }
         else {  // 文件不存在
             try {
-                writer.write("220  file does not exist...\r\n");
+                writer.write("220  file does not exist\r\n");
                 writer.flush();
             } catch (IOException e) {
                 e.printStackTrace();

@@ -18,7 +18,7 @@ import java.util.Calendar;
 public class ListCommand implements Command{
 
     public void getResult(String data, Writer writer, ClientHandler t) {
-        System.out.println("dir : " + data);
+        System.out.println("dir : " + data + "\n");
 
         String desDir = t.getNowDir(); // 获取文件路径
         File dir = new File(desDir);
@@ -34,7 +34,6 @@ public class ListCommand implements Command{
                 String flag = null;
 
                 for(String name : lists) {  // 目录文件信息
-                    System.out.println(name);
                     File temp = new File(desDir+File.separator+name);
 
                     // 获取文件的最后修改时间
@@ -68,17 +67,16 @@ public class ListCommand implements Command{
                 }
                 // 建立数据连接，将数据发送给客户端
                 Socket s;
-                writer.write("150 Opening data connection for directory list...\r\n");
+                writer.write("150 Opening data connection for directory list\r\n");
                 writer.flush();
                 s = new Socket(t.getDataIP(), 20);
 
                 // 发送目录里的文件信息
                 BufferedWriter dataWriter = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
                 dataWriter.write(dirs.toString());
-                System.out.println(dirs.toString());
                 dataWriter.flush();
                 s.close();
-                writer.write("220 transfer complete...\r\n");
+                writer.write("220 transfer complete\r\n");
                 writer.flush();
             }
         } catch (IOException e) {

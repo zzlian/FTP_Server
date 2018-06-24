@@ -13,11 +13,11 @@ import java.net.Socket;
 public class StorCommand implements Command{
 
     public void getResult(String data, Writer writer, ClientHandler t) {
-        System.out.println("filename : " + data);
+        System.out.println("filename : " + data + "\n");
 
         try{
             // 向客户端发出建立数据连接的指令
-            writer.write("150 Binary data connection\r\n");
+            writer.write("150 Opening data connection for stor\r\n");
             writer.flush();
 
             // 建立数据连接

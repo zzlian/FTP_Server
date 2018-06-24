@@ -11,7 +11,7 @@ import java.io.*;
 public class UserCommand implements Command{
 
     public void getResult(String data, Writer writer, ClientHandler t) {
-        System.out.println("username : " + data);
+        System.out.println("username : " + data + "\n");
 
         String response = "";
         boolean result;
@@ -19,7 +19,6 @@ public class UserCommand implements Command{
         // 判断用户名是否存在
         result = isUserNameExit(data, t);
 
-        System.out.println(result);
 
         if(result == false) {  // 用户名不存在
             response = "501 user is not validate\r\n";
@@ -28,7 +27,6 @@ public class UserCommand implements Command{
             response = "331 please input your password\r\n";
         }
         try {   // 响应客户端
-            System.out.println(response);
             writer.write(response);
             writer.flush();
         } catch (IOException e) {
@@ -50,10 +48,8 @@ public class UserCommand implements Command{
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             while((line = reader.readLine()) != null){
-                System.out.println("line : " + line);
                 content = line.split(" ");
                 if(content[0].equals(username)){    // 用户名存在
-                    System.out.println("true");
                     t.setClientName(content[0]);    // 保存用户名
                     t.setClientPasswd(content[1]);  // 保存密码
                     reader.close();         // 关闭连接

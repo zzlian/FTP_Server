@@ -10,7 +10,7 @@ import java.io.*;
 public class PassCommand implements Command{
 
     public void getResult(String data, Writer writer, ClientHandler t) {
-        System.out.println("passwd : " + data);
+        System.out.println("passwd : " + data + "\n");
 
         String response = null;
         boolean result = false;
@@ -19,12 +19,10 @@ public class PassCommand implements Command{
         result = data.equals(t.getClientPasswd());
 
         if(result == true) {    // 密码正确
-            System.out.println("登录成功");
             t.setIsLogin(true);
             response = "230 User "+t.getClientName()+" logged in\r\n";
         }
         else {
-            System.out.println("登录失败，密码错误");
             response = "530 passwd error\r\n";
         }
         try {

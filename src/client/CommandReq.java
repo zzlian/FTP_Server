@@ -22,8 +22,9 @@ public class CommandReq {
 
     // 用户名验证请求
     public static boolean userReq(String username, BufferedReader reader, PrintWriter writer, JTextArea respInfo){
-
+        System.out.print("用户名验证：");
         String message;
+        String[] datas;
         try {
             // 向服务器发送用户名验证命令
             writer.write("user " + username + "\r\n");
@@ -31,13 +32,16 @@ public class CommandReq {
 
             // 接收服务器的响应信息
             message = reader.readLine();
+            datas = message.split(" ");
             
             // 显示信息
             respInfo.append(message + "\n");
             
-            if(message.equals("331")) return true;  // 用户名存在
-            else{   // 用户名不存在
-                System.out.println("message : " + message);
+            if(datas[0].equals("331")) {
+                System.out.println("验证成功。\n");
+                return true;  // 用户名存在
+            } else{   // 用户名不存在
+                System.out.println("验证失败！\n");
                 return false;
             }
         } catch (IOException e) {
@@ -48,6 +52,7 @@ public class CommandReq {
 
     // 密码验证请求
     public static boolean passReq(String passwd, BufferedReader reader, PrintWriter writer, JTextArea respInfo){
+        System.out.print("密码验证：");
         String message;
         String[] datas;
         try {
@@ -57,14 +62,16 @@ public class CommandReq {
 
             // 接收服务器的响应信息
             message = reader.readLine();
+            datas = message.split(" ");
 
             // 显示信息
             respInfo.append(message + "\n");
 
-            datas = message.split(" ");
-            if(datas[0].equals("230")) return true; // 验证密码成功
-            else{   // 密码不正确
-                System.out.println("message : " + message);
+            if(datas[0].equals("230")) {
+                System.out.println("验证成功。\n");
+                return true; // 验证密码成功
+            } else{   // 密码不正确
+                System.out.println("验证失败！\n");
                 return false;
             }
         } catch (IOException e) {
@@ -75,6 +82,7 @@ public class CommandReq {
 
     // 目录文件信息显示请求
     public static String listReq(String dir, BufferedReader reader, PrintWriter writer, JTextArea respInfo){
+        System.out.print("显示目录文件信息：");
         String message;
         String[] datas;
         try {
@@ -89,25 +97,23 @@ public class CommandReq {
 
             // 接收响应信息
             message = reader.readLine();
+            datas = message.split(" ");
 
             // 显示信息
             respInfo.append(message + "\n");
 
-            datas = message.split(" ");
             if(datas[0].equals("150")){ // 建立数据连接，接收文件目录信息
-                System.out.println("进行数据传输！");
                 message = reader.readLine();
 
                 // 显示信息
                 respInfo.append(message + "\n");
 
-                System.out.println("数据传输完成！\n 断开数据连接");
+                System.out.println("信息加载完成  断开数据连接。\n");
                 dataSocket.close(); // 断开连接
                 return data;
             }else{
-                System.out.println("message : " + message);
+                System.out.println("目录不存在   数据连接断开！\n");
                 dataSocket.close(); // 断开数据连接
-                System.out.println("数据连接断开！");
                 return "error";
             }
         } catch (IOException e) {
@@ -119,7 +125,7 @@ public class CommandReq {
 
     // 正常退出请求
     public static boolean quitReq(BufferedReader reader, PrintWriter writer, JTextArea respInfo){
-        System.out.println("正常退出中...");
+        System.out.println("已正常退出\n");
         String message;
         try {
             // 向FTP服务器发送结束请求
@@ -141,6 +147,7 @@ public class CommandReq {
 
     // 从FTP服务器下载文件请求
     public static boolean retrReq(String fname, BufferedReader reader, PrintWriter writer, String dir, JTextArea respInfo){
+        System.out.print("正在从FTP服务器下载文件：");
         userDir = dir;
         filename = fname;
         String message;
@@ -157,25 +164,23 @@ public class CommandReq {
 
             // 接收响应信息
             message = reader.readLine();
+            datas = message.split(" ");
 
             // 显示信息
             respInfo.append(message + "\n");
 
-            datas = message.split(" ");
             if(datas[0].equals("150")){
-                System.out.println("正在从FTP服务器下载文件...");
                 message = reader.readLine();
 
                 // 显示信息
                 respInfo.append(message + "\n");
 
-                System.out.println("下载文件已完成\n断开数据连接");
+                System.out.println("下载文件已完成   断开数据连接。\n");
                 dataSocket.close();
                 return true;
             }else{
                 dataSocket.close();
-                System.out.println("不明异常发生");
-                System.out.println("message : " + message);
+                System.out.println("下载文件失败   断开数据连接！\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -186,6 +191,7 @@ public class CommandReq {
 
     // 修改目录信息请求
     public static boolean cwdReq(String dirName, BufferedReader reader, PrintWriter writer, JTextArea respInfo){
+        System.out.print("切换目录中：");
         String message;
         String[] datas;
         try {
@@ -195,16 +201,16 @@ public class CommandReq {
 
             // 获取响应信息
             message = reader.readLine();
+            datas = message.split(" ");
 
             // 显示信息
             respInfo.append(message + "\n");
 
-            datas = message.split(" ");
             if(datas[0].equals("250")){ // 切换成功
-                System.out.println("切换成功");
+                System.out.println("切换成功。\n");
                 return true;
             }else{  // 目录不存在，切换失败
-                System.out.println("目录不存在，切换失败");
+                System.out.println("目录不存在，切换失败！\n");
                 return false;
             }
         } catch (IOException e) {
@@ -215,6 +221,7 @@ public class CommandReq {
 
     // 存储文件请求
     public static boolean storeReq(File file, BufferedReader reader, PrintWriter writer, JTextArea respInfo){
+        System.out.print("正在上传文件：");
         dataFile = file;
         String message;
         String[] datas;
@@ -230,26 +237,24 @@ public class CommandReq {
 
             // 接收响应信息
             message = reader.readLine();
+            datas = message.split(" ");
 
             // 显示信息
             respInfo.append(message + "\n");
 
-            datas = message.split(" ");
             // 进入数据传输状态
             if(datas[0].equals("150")){
-                System.out.println("进行数据传输！");
                 message = reader.readLine();
 
                 // 显示信息
                 respInfo.append(message + "\n");
 
-                System.out.println("数据传输完成！");
+                System.out.println("文件上传成功。\n");
                 dataSocket.close(); // 关闭数据连接
                 return true;
             }else{  // 数据传输错误
-                System.out.println("message : " + message);
+                System.out.println("文件上传失败！\n");
                 dataSocket.close(); // 断开数据连接
-                System.out.println("数据连接断开！");
                 return false;
             }
         } catch (IOException e) {
@@ -260,6 +265,7 @@ public class CommandReq {
 
     // 删除指定文件
     public static boolean deleReq(String fname, BufferedReader reader, PrintWriter writer, JTextArea respInfo){
+        System.out.print("删除指定文件：");
         String message;
         String[] datas;
         try {
@@ -275,10 +281,10 @@ public class CommandReq {
             respInfo.append(message + "\n");
 
             if(datas[0].equals("250")){
-                System.out.println("文件删除完成。");
+                System.out.println("文件删除完成。\n");
                 return true;
             }else{
-                System.out.println("文件删除失败！");
+                System.out.println("文件删除失败！\n");
                 return false;
             }
         } catch (IOException e) {
@@ -355,7 +361,6 @@ public class CommandReq {
                 }
                 // 下载文件
                 else if(commandType.equals("retr")){
-                    System.out.println("filename : " + userDir + "/" + filename);
                     // 在默认文件夹中新建文件
                     File file = new File(userDir + "/" + filename);
                     BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));

@@ -138,8 +138,7 @@ public class FtpServer {
             boolean status = false;
 
             try {   // 返回连接成功信息
-                writer.write("220 hello");
-                writer.write("\r\n");
+                writer.write("220 hello\r\n");
                 writer.flush();
 
                 // 处理用户发送的命令
@@ -159,8 +158,7 @@ public class FtpServer {
                         continue;
                     }
                     if(command == null){    // 命令不存在
-                        writer.write("502  该命令不存在，请重新输入");
-                        writer.write("\r\n");
+                        writer.write("502  该命令不存在，请重新输入\r\n");
                         writer.flush();
                     }
                     else{   // 执行相应的命令

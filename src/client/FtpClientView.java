@@ -252,7 +252,6 @@ public class FtpClientView {
                         // 进行密码验证
                         ok = CommandReq.passReq(passwd.getText(), client.getReader(), client.getWriter(), respInfo);
                         if(ok == true){ // 验证密码成功，登录成功
-                            System.out.println(ok);
                             isLogin.setText("已登录");
                             login.setEnabled(false);
                         }else{  // 密码错误

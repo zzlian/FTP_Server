@@ -13,9 +13,9 @@ import java.io.Writer;
 public class QuitCommand implements Command{
 
     public void getResult(String data, Writer writer, ClientHandler t) {
-        System.out.println("quit data : " + data);
+        System.out.println("quit data : " + data + "\n");
         try {
-            writer.write("221 goodbye...\r\n");  // 发送结束信息
+            writer.write("221 goodbye\r\n");  // 发送结束信息
             writer.flush();
             writer.close();
             t.getSocket().close();  // 关闭连接

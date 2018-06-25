@@ -22,7 +22,6 @@ public class ListCommand implements Command{
 
         String desDir = t.getNowDir(); // 获取文件路径
         File dir = new File(desDir);
-
         try {
             if(!dir.exists()) { // 文件目录路径不存在
                 writer.write("210 dir does not exist\r\n");

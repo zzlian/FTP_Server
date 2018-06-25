@@ -1,11 +1,7 @@
 package client;
 
 
-import com.sun.security.ntlm.Server;
-import server.FtpServer.ClientHandler;
-
 import javax.swing.*;
-import javax.xml.crypto.Data;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -113,6 +109,7 @@ public class CommandReq {
                 return data;
             }else{
                 System.out.println("目录不存在   数据连接断开！\n");
+                t.stop();   // 中断线程
                 dataSocket.close(); // 断开数据连接
                 return "error";
             }
@@ -145,7 +142,7 @@ public class CommandReq {
         return false;
     }
 
-    // 从FTP服务器下载文件请求
+    // 下载文件请求
     public static boolean retrReq(String fname, BufferedReader reader, PrintWriter writer, String dir, JTextArea respInfo){
         System.out.print("正在从FTP服务器下载文件：");
         userDir = dir;
@@ -179,6 +176,7 @@ public class CommandReq {
                 dataSocket.close();
                 return true;
             }else{
+                t.stop();   // 中断线程
                 dataSocket.close();
                 System.out.println("下载文件失败   断开数据连接！\n");
             }
@@ -189,7 +187,7 @@ public class CommandReq {
         return false;
     }
 
-    // 修改目录信息请求
+    // 切换工作目录请求
     public static boolean cwdReq(String dirName, BufferedReader reader, PrintWriter writer, JTextArea respInfo){
         System.out.print("切换目录中：");
         String message;
@@ -254,6 +252,7 @@ public class CommandReq {
                 return true;
             }else{  // 数据传输错误
                 System.out.println("文件上传失败！\n");
+                t.stop();   // 中断线程
                 dataSocket.close(); // 断开数据连接
                 return false;
             }
@@ -301,26 +300,8 @@ public class CommandReq {
         private ServerSocket dataSocket;
         private Socket socket;
         private BufferedReader reader;
-        private PrintWriter writer;
         private String commandType;
         private boolean isCompleted;
-
-
-        public boolean isCompleted() {
-            return this.isCompleted;
-        }
-
-        public void setCompleted(boolean completed) {
-            this.isCompleted = completed;
-        }
-
-        public ServerSocket getDataSocket() {
-            return this.dataSocket;
-        }
-
-        public void setDataSocket(ServerSocket dataSocket) {
-            this.dataSocket = dataSocket;
-        }
 
         // 构造函数
         public DataSocket(ServerSocket dataSocket, String commandType){
@@ -329,6 +310,7 @@ public class CommandReq {
             this.isCompleted = false;
         }
 
+        // 进行数据传输
         public void run(){
             try {
                 socket = dataSocket.accept();   // 获取数据连接

@@ -62,9 +62,9 @@ public class FtpServer {
     public class ClientHandler implements Runnable {
 
         // 工作目录
-        private String nowDir = "D:\\Program Files (x86)\\java_work\\FTP_Server\\src\\server\\rootDir";
+        private String nowDir = System.getProperty("user.dir") + "\\src\\server\\rootDir";
         // 用户名及密码信息文件
-        private String userInfoFile = "D:\\Program Files (x86)\\java_work\\FTP_Server\\src\\server\\userInfo\\userInfo.txt";
+        private String userInfoFile = System.getProperty("user.dir") + "\\src\\server\\userInfo\\userInfo.txt";
         private BufferedReader reader;
         private BufferedWriter writer;
         private Socket socket;
@@ -168,7 +168,6 @@ public class FtpServer {
                         }
                         command.getResult(data, writer,this); // 执行命令
                     }
-
                 }
             } catch (IOException e) {
                 e.printStackTrace();

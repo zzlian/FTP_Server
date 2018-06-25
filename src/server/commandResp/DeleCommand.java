@@ -8,7 +8,7 @@ import java.io.Writer;
 
 /**
  * 删除指定的文件
- **/
+ */
 public class DeleCommand implements Command{
 
     public void getResult(String data, Writer writer, FtpServer.ClientHandler t) {

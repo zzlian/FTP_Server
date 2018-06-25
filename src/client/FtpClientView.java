@@ -109,7 +109,7 @@ public class FtpClientView {
                 }
             }
         });
-        // 修改文件目录
+        // 切换工作目录目录
         cwd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -129,6 +129,7 @@ public class FtpClientView {
                 boolean ok;
                 ok = CommandReq.cwdReq(dirName.getText(), client.getReader(), client.getWriter(), respInfo);
                 if(ok == true){
+                    selectedFile = null;
                     JOptionPane.showMessageDialog(null, "成功切换到工作目录: " + dirName.getText());
                 }else{
                     JOptionPane.showMessageDialog(null, "指定的目录不存在，切换失败！");
@@ -166,6 +167,8 @@ public class FtpClientView {
                         link.setEnabled(true);
                         isLogin.setText("未登录");
                         login.setEnabled(true);
+
+                        JOptionPane.showMessageDialog(null, "已退出！");
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
@@ -203,6 +206,7 @@ public class FtpClientView {
             public void actionPerformed(ActionEvent e) {
                 fileInfo.setListData(new String[0]);  // 清空信息
                 respInfo.setText("");
+                dirName.setText("");
                 selectedFile = null;
             }
         });

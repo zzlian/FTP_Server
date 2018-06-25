@@ -11,7 +11,44 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="FtpServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/FtpServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#FtpServer#0" expanded="false" />
+                <element signature="method#main#0;class#FtpServer#0" expanded="false" />
+                <element signature="method#FtpServer#0;class#FtpServer#0" expanded="false" />
+                <element signature="method#go#0;class#FtpServer#0" expanded="false" />
+                <element signature="method#buildCommand#0;class#FtpServer#0" expanded="false" />
+                <element signature="docComment;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
+                <element signature="e#3182#3183#0" expanded="true" />
+                <element signature="e#3228#3229#0" expanded="true" />
+                <element signature="method#run#0;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
+                <element signature="method#isValidated#0;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FtpClientView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/FtpClientView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#FtpClientView#0;class#FtpClientView#0" expanded="false" />
+                <element signature="method#main#0;class#FtpClientView#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,11 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/server/FtpServer_new.java" />
-        <option value="$PROJECT_DIR$/src/service/FtpServer_new.java" />
-        <option value="$PROJECT_DIR$/src/commands/Command.java" />
-        <option value="$PROJECT_DIR$/src/service/ControllerThread.java" />
-        <option value="$PROJECT_DIR$/src/rootDir/userInfo" />
         <option value="$PROJECT_DIR$/src/service/forTest.java" />
         <option value="$PROJECT_DIR$/src/service/FtpServer.java" />
         <option value="$PROJECT_DIR$/src/view/Login.java" />
@@ -86,19 +118,24 @@
         <option value="$PROJECT_DIR$/src/commands/CwdCommand.java" />
         <option value="$PROJECT_DIR$/src/commandResp/Command.java" />
         <option value="$PROJECT_DIR$/src/client/clientDir/a.txt" />
-        <option value="$PROJECT_DIR$/src/client/FtpClient.java" />
-        <option value="$PROJECT_DIR$/src/client/FtpClientView.form" />
-        <option value="$PROJECT_DIR$/src/client/FtpClientView.java" />
-        <option value="$PROJECT_DIR$/src/client/CommandReq.java" />
-        <option value="$PROJECT_DIR$/src/server/FtpServer.java" />
         <option value="$PROJECT_DIR$/src/server/commandResp/StorCommand.java" />
         <option value="$PROJECT_DIR$/src/server/commandResp/RetrCommand.java" />
         <option value="$PROJECT_DIR$/src/server/commandResp/QuitCommand.java" />
-        <option value="$PROJECT_DIR$/src/server/commandResp/PassCommand.java" />
+        <option value="$PROJECT_DIR$/src/server/commandResp/UserCommand.java" />
+        <option value="$PROJECT_DIR$/src/server/rootDir/userA/1.txt" />
+        <option value="$PROJECT_DIR$/src/server/rootDir/userA/2.txt" />
+        <option value="$PROJECT_DIR$/src/server/rootDir/userA/3.txt" />
+        <option value="$PROJECT_DIR$/src/client/FtpClientView.form" />
+        <option value="$PROJECT_DIR$/src/client/FtpClientView.java" />
+        <option value="$PROJECT_DIR$/src/client/CommandReq.java" />
         <option value="$PROJECT_DIR$/src/server/commandResp/ListCommand.java" />
         <option value="$PROJECT_DIR$/src/server/commandResp/DeleCommand.java" />
         <option value="$PROJECT_DIR$/src/server/commandResp/CwdCommand.java" />
-        <option value="$PROJECT_DIR$/src/server/commandResp/UserCommand.java" />
+        <option value="$PROJECT_DIR$/src/server/commandResp/Command.java" />
+        <option value="$PROJECT_DIR$/src/server/FtpServer.java" />
+        <option value="$PROJECT_DIR$/src/client/FtpClient.java" />
+        <option value="$PROJECT_DIR$/src/server/userInfo/userInfo.txt" />
+        <option value="$PROJECT_DIR$/src/server/commandResp/PassCommand.java" />
       </list>
     </option>
   </component>
@@ -108,7 +145,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="1924" />
     <option name="height" value="1030" />
@@ -129,8 +166,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,12 +179,26 @@
               <item name="FTP_Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="FTP_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FTP_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FTP_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FTP_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="FtpClientView" type="e9f4de52:FormNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -162,14 +212,14 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Program Files (x86)\java_work\FTP_Server\src\userInfo" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="command" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="view" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="command" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Program Files (x86)\java_work\FTP_Server\src\userInfo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -403,15 +453,18 @@
       <workItem from="1528985961108" duration="1072000" />
       <workItem from="1529746784085" duration="618000" />
       <workItem from="1529758992664" duration="9715000" />
-      <workItem from="1529815361942" duration="2949000" />
+      <workItem from="1529815361942" duration="15717000" />
+      <workItem from="1529907620104" duration="2415000" />
+      <workItem from="1529912170895" duration="1149000" />
+      <workItem from="1529913530234" duration="110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88941000" />
+    <option name="totallyTimeSpent" value="105383000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -421,19 +474,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21436717" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23603192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -450,51 +503,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/FtpClientView.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/forTestView.java" />
-    <entry file="file://$PROJECT_DIR$/src/server/FtpServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#FtpServer#0" expanded="false" />
-            <element signature="method#main#0;class#FtpServer#0" expanded="false" />
-            <element signature="method#FtpServer#0;class#FtpServer#0" expanded="false" />
-            <element signature="method#go#0;class#FtpServer#0" expanded="false" />
-            <element signature="method#buildCommand#0;class#FtpServer#0" expanded="false" />
-            <element signature="docComment;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
-            <element signature="class#ClientHandler#0;class#FtpServer#0" expanded="false" />
-            <element signature="method#ClientHandler#0;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
-            <element signature="method#isValidated#0;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTP_Server.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/FtpServer_new.java" />
-    <entry file="jar://D:/program_application/java_jdk/jdk1.8.0_161/src.zip!/java/net/InetAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="684" column="46" lean-forward="true" selection-start-line="684" selection-start-column="46" selection-end-line="684" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/program_application/java_jdk/jdk1.8.0_161/src.zip!/java/net/InetSocketAddress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -550,30 +563,12 @@
     <entry file="file://$PROJECT_DIR$/src/client/clientDir/userInfo.txt" />
     <entry file="file://$PROJECT_DIR$/src/server/forTest2.form" />
     <entry file="file://$PROJECT_DIR$/src/server/forTest2.java" />
-    <entry file="file://$PROJECT_DIR$/src/server/rootDir/b.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="38" lean-forward="true" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/rootDir/b.txt" />
     <entry file="file://$PROJECT_DIR$/src/server/forTest.form" />
     <entry file="file://$PROJECT_DIR$/src/server/forTest.java" />
     <entry file="file://$PROJECT_DIR$/src/server/ControllerThread.java" />
-    <entry file="file://$PROJECT_DIR$/src/server/rootDir/userA/file1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/rootDir/userA/file2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/rootDir/userA/file1.txt" />
+    <entry file="file://$PROJECT_DIR$/src/server/rootDir/userA/file2.txt" />
     <entry file="file://$PROJECT_DIR$/src/server/rootDir/userB/fileA.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -589,13 +584,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/commands/PortCommand.java" />
-    <entry file="file://$PROJECT_DIR$/src/server/commandResp/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/forTestView.java" />
     <entry file="file://$PROJECT_DIR$/src/client/clientDir/a.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -604,56 +592,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/rootDir/路飞.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/clientDir/路飞.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/rootDir/userA/1.txt" />
+    <entry file="file://$PROJECT_DIR$/src/server/rootDir/userA/2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/rootDir/userA/3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/program_application/java_jdk/jdk1.8.0_161/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/FtpClientView.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/userInfo/userInfo.txt">
+    <entry file="file://$PROJECT_DIR$/src/server/commandResp/Command.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="250">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/FtpClient.java">
+    <entry file="file://$PROJECT_DIR$/src/server/commandResp/CwdCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
-          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/CommandReq.java">
+    <entry file="file://$PROJECT_DIR$/src/server/commandResp/DeleCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="266" column="110" lean-forward="false" selection-start-line="266" selection-start-column="110" selection-end-line="266" selection-end-column="110" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#userReq#0;class#CommandReq#0" expanded="false" />
-            <element signature="method#passReq#0;class#CommandReq#0" expanded="false" />
-            <element signature="method#listReq#0;class#CommandReq#0" expanded="false" />
-            <element signature="method#quitReq#0;class#CommandReq#0" expanded="false" />
-            <element signature="method#retrReq#0;class#CommandReq#0" expanded="false" />
-            <element signature="method#cwdReq#0;class#CommandReq#0" expanded="false" />
-            <element signature="method#storeReq#0;class#CommandReq#0" expanded="false" />
-            <element signature="method#deleReq#0;class#CommandReq#0" expanded="false" />
-            <element signature="docComment;class#DataSocket#0;class#CommandReq#0" expanded="false" />
-            <element signature="class#DataSocket#0;class#CommandReq#0" expanded="false" />
-            <element signature="method#DataSocket#0;class#DataSocket#0;class#CommandReq#0" expanded="false" />
-            <element signature="method#run#0;class#DataSocket#0;class#CommandReq#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="25">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/commandResp/RetrCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/server/commandResp/ListCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="350">
+          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -661,98 +662,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/commandResp/PassCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/server/commandResp/RetrCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/commandResp/ListCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="75" column="50" lean-forward="true" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/commandResp/DeleCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/commandResp/CwdCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-          <folding>
-            <element signature="docComment;class#CwdCommand#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/commandResp/UserCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="603">
+          <caret line="40" column="43" lean-forward="true" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/commandResp/StorCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="53" lean-forward="false" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-          <folding />
+        <state relative-caret-position="200">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/FtpClientView.java">
+    <entry file="file://$PROJECT_DIR$/src/server/commandResp/UserCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="52" column="27" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#FtpClientView#0;class#FtpClientView#0" expanded="false" />
-            <element signature="class#1436:2731" expanded="false" />
-            <element signature="method#actionPerformed#0;class#1436:2731" expanded="false" />
-            <element signature="class#2802:3967" expanded="false" />
-            <element signature="method#actionPerformed#0;class#2802:3967" expanded="false" />
-            <element signature="class#4022:5054" expanded="false" />
-            <element signature="method#actionPerformed#0;class#4022:5054" expanded="false" />
-            <element signature="class#5108:6517" expanded="false" />
-            <element signature="method#actionPerformed#0;class#5108:6517" expanded="false" />
-            <element signature="class#6575:7542" expanded="false" />
-            <element signature="method#actionPerformed#0;class#6575:7542" expanded="false" />
-            <element signature="class#7599:7857" expanded="false" />
-            <element signature="method#actionPerformed#0;class#7599:7857" expanded="false" />
-            <element signature="class#7915:8954" expanded="false" />
-            <element signature="method#actionPerformed#0;class#7915:8954" expanded="false" />
-            <element signature="class#9013:10579" expanded="false" />
-            <element signature="method#actionPerformed#0;class#9013:10579" expanded="false" />
-            <element signature="class#10665:11144" expanded="false" />
-            <element signature="method#valueChanged#0;class#10665:11144" expanded="false" />
-            <element signature="class#11201:12345" expanded="false" />
-            <element signature="method#actionPerformed#0;class#11201:12345" expanded="false" />
-            <element signature="method#main#0;class#FtpClientView#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="603">
+          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/CommandReq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="298" column="54" lean-forward="false" selection-start-line="298" selection-start-column="54" selection-end-line="298" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/FtpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/userInfo/userInfo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/commandResp/PassCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/FtpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="61" column="51" lean-forward="false" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+        <state relative-caret-position="335">
+          <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#FtpServer#0" expanded="false" />
@@ -761,9 +726,22 @@
             <element signature="method#go#0;class#FtpServer#0" expanded="false" />
             <element signature="method#buildCommand#0;class#FtpServer#0" expanded="false" />
             <element signature="docComment;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
-            <element signature="class#ClientHandler#0;class#FtpServer#0" expanded="false" />
-            <element signature="method#ClientHandler#0;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
+            <element signature="e#3182#3183#0" expanded="true" />
+            <element signature="e#3228#3229#0" expanded="true" />
+            <element signature="method#run#0;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
             <element signature="method#isValidated#0;class#ClientHandler#0;class#FtpServer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/FtpClientView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#FtpClientView#0;class#FtpClientView#0" expanded="false" />
+            <element signature="method#main#0;class#FtpClientView#0" expanded="false" />
           </folding>
         </state>
       </provider>

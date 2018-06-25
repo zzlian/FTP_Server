@@ -5,9 +5,14 @@ import javax.swing.*;
 import java.io.*;
 import java.net.Socket;
 
+
+/**
+ * 创建FTP客户端
+ * 使用socket与FTP服务器建立连接
+ */
 public class FtpClient {
 
-    private String userDir = "D:\\Program Files (x86)\\java_work\\FTP_Server\\src\\client\\clientDir"; // 默认下载文件路径
+    private String userDir = System.getProperty("user.dir") + "\\src\\client\\clientDir"; // 默认下载文件路径
     private PrintWriter writer;   // 打印输出流
     private Socket socket;
     private BufferedReader reader;
@@ -55,8 +60,8 @@ public class FtpClient {
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream());
 
-            message = reader.readLine();
-            respInfo.append(message + "\n");
+            message = reader.readLine();   // 获取服务器响应的问候信息
+            respInfo.append(message + "\n"); // 显示收到的信息
             return true;
         } catch (Exception e) {
             return false;
